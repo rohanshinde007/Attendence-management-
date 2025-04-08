@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Management System</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-clipboard-check"></i> Attendance Management System</h1>
+        </header>
+
+        <main>
+            <section id="student-management">
+                <h2><i class="fas fa-users"></i> Student Management</h2>
+                <form id="list-form" class="form-group">
+                    <input type="text" id="list-name" placeholder="List Name" required>
+                    <button type="submit"><i class="fas fa-plus"></i> Create List</button>
+                </form>
+                
+                <div class="form-group">
+                    <select id="student-lists">
+                        <option value="">Select a student list</option>
+                    </select>
+                </div>
+
+                <form id="student-form" class="form-group">
+                    <input type="text" id="name" placeholder="Name" required>
+                    <input type="email" id="email" placeholder="Email">
+                    <input type="text" id="class" placeholder="Class">
+                    <input type="text" id="roll_number" placeholder="Roll Number">
+                    <button type="submit"><i class="fas fa-user-plus"></i> Add Student</button>
+                </form>
+
+                <div class="student-list-container">
+                    <h3>Current Students</h3>
+                    <ul id="student-list">
+                        <!-- Students will be added here -->
+                    </ul>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="remove-student" title="Remove Latest Student"><i class="fas fa-user-minus"></i> Remove Latest Student</button>
+                    <button id="remove-student-list"><i class="fas fa-trash"></i> Remove Student List</button>
+                </div>
+            </section>
+
+            <section id="attendance-module">
+                <h2><i class="fas fa-calendar-check"></i> Attendance Module</h2>
+                <div class="form-group">
+                    <input type="date" id="attendance-date" required>
+                </div>
+                <div class="attendance-list-container">
+                    <h3>Today's Attendance</h3>
+                    <ul id="attendance-list">
+                        <!-- Example attendance list item structure -->
+                        <li>
+                            <div class="student-info">
+                                <span class="student-name">John Doe  <span class="roll-number">(Roll No: 12345)</span> </span> 
+                                
+                            </div>
+                            <div class="attendance-status">
+                                <select class="attendance-select">
+                                    <option value="present">Present</option>
+                                    <option value="absent">Absent</option>
+                                    <option value="late">Late</option>
+                                </select>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <button id="save-attendance"><i class="fas fa-save"></i> Save Attendance</button>
+            </section>
+
+            <section id="report-generation">
+                <h2><i class="fas fa-file-alt"></i> Report Generation</h2>
+                <button id="download-report"><i class="fas fa-download"></i> Download Report</button>
+            </section>
+        </main>
+    </div>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
